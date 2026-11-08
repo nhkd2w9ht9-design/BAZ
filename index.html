@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Plant databases, Illustrator and InDesign files, tools and guides for landscape architects and designers.">
+<title>BAZ Landscape Architect</title>
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=DM+Sans:opsz,wght@9..40,400..600&display=swap">
+<style>
+:root {
+  /* One look only: white page, black text. Thin grey rules and grey image boxes are the only tints. */
+  --bg: #FFFFFF;
+  --ink: #000000;
+  --ink-2: #000000;
+  --rule: #D4D4D4;
+  --ph: #F2F2F2;
+  --ph-line: #D0D0D0;
+  --display: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
+h2 { font-weight: 400; font-size: clamp(1.6rem, 3.2vw, 2.3rem); line-height: 1.2; letter-spacing: -0.005em; }
+h3 { font-weight: 500; font-size: 1.05rem; line-height: 1.35; }
+p { margin: 0; max-width: 62ch; }
+a { color: inherit; }
+.label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--ink-2); }
+.muted { color: var(--ink-2); }
+.center { text-align: center; }
+.center p { margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+a:focus-visible, button:focus-visible, input:focus-visible, .ph:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* Draft hint */
+.hint { max-width: 1160px; margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding: 10px 14px; background: var(--bg); color: var(--ink); border: 1px solid var(--ink); font-size: 0.85rem; }
+.hint button { background: none; border: 0; padding: 0; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
+
+/* Header */
+.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--rule); }
+.bar { position: relative; max-width: 1160px; margin-inline: auto; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 32px; padding-block: 14px; }
+.logo { display: block; order: 1; line-height: 0; }
+.logo img { height: 48px; width: auto; display: block; }
+.nav { display: flex; gap: 6px 28px; flex-wrap: wrap; margin-left: auto; order: 2; }
+.nav a { text-decoration: none; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 0; border-bottom: 1px solid transparent; }
+.nav a:hover { border-bottom-color: var(--ink); }
+@media (max-width: 720px) {
+  .nav { width: 100%; margin-left: 0; }
+}
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 26px; background: var(--ink); color: var(--bg); border: 1px solid var(--ink); font: 500 0.78rem var(--text); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; cursor: pointer; border-radius: 0; text-align: center; }
+.btn:hover { background: var(--bg); color: var(--ink); }
+.btn.sm { min-height: 40px; padding: 0 18px; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; background: var(--ink); color: var(--bg); }
+
+/* Image placeholders */
+.ph {
+  position: relative; display: flex; align-items: center; justify-content: center; width: 100%; overflow: hidden; cursor: pointer;
+  border: 1px solid var(--rule); background-color: var(--ph);
+  background-image:
+    linear-gradient(to top right, transparent calc(50% - 0.5px), var(--ph-line) calc(50% - 0.5px), var(--ph-line) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(to top left, transparent calc(50% - 0.5px), var(--ph-line) calc(50% - 0.5px), var(--ph-line) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+}
+.ph-label { background: var(--bg); color: var(--ink-2); border: 1px solid var(--rule); padding: 7px 12px; text-align: center; font: 500 0.7rem var(--text); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.4; }
+.ph-label small { display: block; font-size: 0.65rem; letter-spacing: 0.1em; opacity: 0.85; }
+.ph:hover .ph-label { color: var(--ink); border-color: var(--ink); }
+.ph.sm .ph-label { padding: 2px 9px; font-size: 0.9rem; }
+.ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph.has-img { border-color: transparent; }
+.ph.has-img .ph-label { display: none; }
+.ph.filled { cursor: default; }
+.ph.drag { outline: 2px dashed var(--ink); outline-offset: -8px; }
+.r-wide { aspect-ratio: 16 / 7; }
+.r-3x2 { aspect-ratio: 3 / 2; }
+.r-4x3 { aspect-ratio: 4 / 3; }
+.r-1x1 { aspect-ratio: 1 / 1; }
+.r-4x5 { aspect-ratio: 4 / 5; }
+@media (max-width: 720px) { .r-wide { aspect-ratio: 4 / 3; } }
+
+/* Layout blocks */
+.section { max-width: 1160px; margin-inline: auto; padding-block: clamp(56px, 9vw, 104px); scroll-margin-top: 100px; }
+.section + .section { border-top: 1px solid var(--rule); }
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 32px; margin-bottom: clamp(28px, 4vw, 44px); }
+.section-head p { color: var(--ink-2); }
+.grid-2, .grid-3, .grid-4, .trio, .cards { display: grid; gap: 32px 24px; align-items: start; }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3, .cards, .trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 860px) { .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .cards { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 600px) { .grid-2, .grid-3, .trio { grid-template-columns: minmax(0, 1fr); } }
+.cap { display: flex; flex-direction: column; gap: 4px; margin-top: 14px; }
+.cap p { color: var(--ink-2); font-size: 0.95rem; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 6vw, 80px); align-items: center; }
+.split .text { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; min-width: 0; }
+@media (max-width: 720px) { .split { grid-template-columns: minmax(0, 1fr); } }
+
+/* Hero */
+.hero { max-width: 1160px; margin-inline: auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; padding-block: clamp(24px, 4vw, 48px) clamp(56px, 8vw, 96px); scroll-margin-top: 100px; }
+.hero .ph { margin-bottom: clamp(16px, 3vw, 32px); }
+.hero h1 { font-weight: 300; font-size: clamp(2rem, 5.4vw, 3.8rem); line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance; }
+.hero h1 span { display: block; }
+.hero h1 .h1-sub { font-weight: 500; font-size: clamp(1rem, 2vw, 1.3rem); letter-spacing: 0.01em; line-height: 1.4; margin-top: 18px; }
+.hero p { color: var(--ink-2); font-size: 1.08rem; margin-inline: auto; }
+
+/* Cards, bullets */
+.card { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.card h3 { text-transform: lowercase; font-weight: 500; font-size: 1.2rem; margin-top: 8px; }
+.card p { color: var(--ink-2); font-size: 0.95rem; }
+.points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.points b { font-weight: 600; }
+
+/* Shop */
+.shop { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.item { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto 150px; gap: 8px 24px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.item .what p { color: var(--ink-2); margin-top: 4px; font-size: 0.95rem; }
+.item .price { font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
+.item .btn { width: 100%; }
+@media (max-width: 720px) {
+  .item { grid-template-columns: 80px minmax(0, 1fr); grid-template-areas: "thumb what" "price add"; }
+  .item .ph { grid-area: thumb; }
+  .item .what { grid-area: what; }
+  .item .price { grid-area: price; text-align: left; }
+  .item .btn { grid-area: add; width: auto; justify-self: end; }
+}
+.licence { margin-top: 20px; color: var(--ink-2); font-size: 0.92rem; }
+
+/* Contact, blog */
+.cap .btn { align-self: flex-start; margin-top: 10px; }
+.contact { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.todo { font-style: italic; color: var(--ink-2); }
+.post .meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 6px; }
+.post .more { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
+
+/* Message shown when a Buy button has no link yet */
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 40; max-width: calc(100% - 32px); padding: 12px 18px; background: var(--bg); color: var(--ink); border: 1px solid var(--ink); font-size: 0.9rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); }
+
+/* Footer */
+footer { max-width: 1160px; margin-inline: auto; border-top: 1px solid var(--ink); padding-block: 36px 48px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; font-size: 0.92rem; }
+footer .logo img { height: 40px; }
+footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+footer .legal { color: var(--ink-2); font-size: 0.85rem; }
+@media (max-width: 720px) { footer { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+
+<div class="hint" id="hint" role="note">
+  <span>Draft: click or drop a picture on any image box to preview it. Previews reset when you reload the page.</span>
+  <button type="button" id="hint-close">Dismiss</button>
+</div>
+
+<header class="site">
+  <div class="bar">
+    <a class="logo" href="#home" aria-label="BAZ Landscape Architect, home"><img src="images/logo.png" width="900" height="306" alt="BAZ Landscape Architect"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#shop">Shop</a>
+      <a href="#blog">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="ph r-wide" data-name="Hero" data-ratio="16 : 7"></div>
+    <h1 id="hero-title">
+      <span>Beautiful planting plans.</span>
+      <span>Smarter workflows.</span>
+      <span class="h1-sub">Landscape files built for landscape architects + designers.</span>
+    </h1>
+    <p>Plant databases, Illustrator and InDesign files, tools and guides for landscape design.</p>
+    <a class="btn" href="#shop">Explore the shop</a>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="section-head">
+      <h2 id="projects-title">Projects</h2>
+      <p>A selection of my own work.</p>
+    </div>
+    <div class="grid-3">
+      <figure style="margin:0">
+        <div class="ph r-4x5" data-name="Project one" data-ratio="4 : 5"></div>
+        <figcaption class="cap"><h3>Project name</h3><span class="label">Project type, location</span></figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="ph r-4x5" data-name="Project two" data-ratio="4 : 5"></div>
+        <figcaption class="cap"><h3>Project name</h3><span class="label">Project type, location</span></figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="ph r-4x5" data-name="Project three" data-ratio="4 : 5"></div>
+        <figcaption class="cap"><h3>Project name</h3><span class="label">Project type, location</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section center" aria-labelledby="db-title">
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center;margin-bottom:clamp(28px,4vw,48px)">
+      <h2 id="db-title">A plant database made for landscape designers</h2>
+      <p class="muted">A searchable Excel plant database with 500+ plants. Filter by growth rate, sun or shade and drought tolerance, then open a plant card for the details you need on a planting plan.</p>
+    </div>
+    <div class="grid-2" style="text-align:left">
+      <figure style="margin:0">
+        <div class="ph r-3x2" data-name="Dashboard" data-ratio="3 : 2"></div>
+        <figcaption class="cap"><span class="label">Dashboard with filters</span></figcaption>
+      </figure>
+      <figure style="margin:0">
+        <div class="ph r-3x2" data-name="Plant card" data-ratio="3 : 2"></div>
+        <figcaption class="cap"><span class="label">Plant card with photo link</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="smart-title">
+    <div class="split">
+      <div class="text">
+        <h2 id="smart-title">Work smarter on every planting schedule</h2>
+        <p class="muted">Schedules take time to build and are easy to get wrong. The canopy coverage calculator takes the botanical name, stock size, canopy growth and clear trunk height for each tree and gives you the canopy cover of the site.</p>
+        <a class="btn" href="#shop">See what's included</a>
+      </div>
+      <div class="ph r-4x5" data-name="Guide cover" data-ratio="4 : 5"></div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Resources">
+    <div class="cards">
+      <div class="card">
+        <div class="ph r-1x1" data-name="Plant database card" data-ratio="1 : 1"></div>
+        <h3>plant database</h3>
+        <p>Filter 500+ plants by growth rate, sun or shade and drought tolerance.</p>
+        <a class="btn" href="#shop">See the database</a>
+      </div>
+      <div class="card">
+        <div class="ph r-1x1" data-name="Design files card" data-ratio="1 : 1"></div>
+        <h3>design files</h3>
+        <p>Illustrator plant symbols and InDesign portfolio templates, ready to edit.</p>
+        <a class="btn" href="#shop">Explore files</a>
+      </div>
+      <div class="card">
+        <div class="ph r-1x1" data-name="Checklist card" data-ratio="1 : 1"></div>
+        <h3>free checklist</h3>
+        <p>A one-page checklist for building a planting palette.</p>
+        <a class="btn" href="#download">Free checklist</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="built-title">
+    <div class="split" style="align-items:start">
+      <div class="text">
+        <h2 id="built-title">Built for design-led landscape architects.</h2>
+        <ul class="points">
+          <li><b>Save time on every project.</b> Plant data, symbols and layouts are ready to use, so you spend less time setting up.</li>
+          <li><b>Designed for clarity and consistency.</b> Files follow the conventions of landscape drawings, such as plan symbols and planting schedules.</li>
+          <li><b>Learn as you go.</b> Short guides on the blog explain how each file works.</li>
+        </ul>
+        <a class="btn" href="#shop">Compare files</a>
+      </div>
+      <div class="trio" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+        <div class="ph r-4x5" data-name="Detail portrait one" data-ratio="4 : 5"></div>
+        <div class="ph r-4x5" data-name="Detail portrait two" data-ratio="4 : 5"></div>
+        <div class="ph r-1x1" data-name="Detail square" data-ratio="1 : 1" style="grid-column:1 / -1"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shop" aria-labelledby="shop-title">
+    <div class="section-head">
+      <h2 id="shop-title">Shop</h2>
+      <p>Files made to speed up planting, calculation and presentation work.</p>
+    </div>
+    <ul class="shop">
+      <li class="item">
+        <div class="ph sm r-1x1" data-name="Plant Database product" data-ratio=""></div>
+        <div class="what"><h3>Plant Database</h3><p>Excel. 500+ plants with a searchable plant card, filters and photo links.</p></div>
+        <span class="price">A$39.00</span>
+        <a class="btn sm" href="#" data-product="plant-database">Buy now</a>
+      </li>
+      <li class="item">
+        <div class="ph sm r-1x1" data-name="Canopy Coverage Calculator product" data-ratio=""></div>
+        <div class="what"><h3>Canopy Coverage Calculator</h3><p>Excel. Canopy cover of a site from your planting schedule.</p></div>
+        <span class="price">A$19.00</span>
+        <a class="btn sm" href="#" data-product="canopy-calculator">Buy now</a>
+      </li>
+      <li class="item">
+        <div class="ph sm r-1x1" data-name="Plant Symbols product" data-ratio=""></div>
+        <div class="what"><h3>Plan-view Plant Symbols</h3><p>Illustrator. Editable vector symbols for planting plans.</p></div>
+        <span class="price">A$24.00</span>
+        <a class="btn sm" href="#" data-product="plant-symbols">Buy now</a>
+      </li>
+      <li class="item">
+        <div class="ph sm r-1x1" data-name="Portfolio Template product" data-ratio=""></div>
+        <div class="what"><h3>Portfolio Template</h3><p>InDesign. Cover, project spreads and plan pages for a landscape portfolio.</p></div>
+        <span class="price">A$35.00</span>
+        <a class="btn sm" href="#" data-product="portfolio-template">Buy now</a>
+      </li>
+      <li class="item">
+        <div class="ph sm r-1x1" data-name="Notion product" data-ratio=""></div>
+        <div class="what"><h3>Plant Database for Notion</h3><p>Notion. The plant database as a template you can search, filter and add to.</p></div>
+        <span class="price">Soon</span>
+        <button class="btn sm" type="button" disabled>Coming soon</button>
+      </li>
+    </ul>
+    <p class="licence">One licence per designer. Use the files in client and personal work. No resale or sharing.</p>
+  </section>
+
+  <section class="section" id="downloads" aria-labelledby="dl-title">
+    <div class="section-head">
+      <h2 id="dl-title">Downloads</h2>
+      <p>Free guides and checklists.</p>
+    </div>
+    <div class="grid-4">
+      <figure style="margin:0"><div class="ph r-1x1" data-name="Plant palette starter" data-ratio="1 : 1"></div><figcaption class="cap"><h3>Plant palette starter</h3><span class="label">Free guide</span><a class="btn sm" href="#" data-product="free-palette-guide">Get it free</a></figcaption></figure>
+      <figure style="margin:0"><div class="ph r-1x1" data-name="Planting schedule checklist" data-ratio="1 : 1"></div><figcaption class="cap"><h3>Planting schedule checklist</h3><span class="label">Free checklist</span><a class="btn sm" href="#" data-product="free-checklist">Get it free</a></figcaption></figure>
+      <figure style="margin:0"><div class="ph r-1x1" data-name="Portfolio layout guide" data-ratio="1 : 1"></div><figcaption class="cap"><h3>Portfolio layout guide</h3><span class="label">Free guide</span><a class="btn sm" href="#" data-product="free-portfolio-guide">Get it free</a></figcaption></figure>
+      <figure style="margin:0"><div class="ph r-1x1" data-name="Plant database quick start" data-ratio="1 : 1"></div><figcaption class="cap"><h3>Plant database quick start</h3><span class="label">Free guide</span><a class="btn sm" href="#" data-product="free-quick-start">Get it free</a></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section" id="download" aria-labelledby="signup-title">
+    <div class="split">
+      <div class="text">
+        <h2 id="signup-title">Download the free plant palette guide</h2>
+        <p class="muted">Free to download. You collect it from Gumroad.</p>
+        <a class="btn" href="#" data-product="free-palette-guide">Get the free guide</a>
+      </div>
+      <div class="ph r-1x1" data-name="Guide preview" data-ratio="1 : 1" style="max-width:420px;justify-self:end"></div>
+    </div>
+  </section>
+
+  <section class="section center" id="contact" aria-labelledby="contact-title">
+    <div class="contact">
+      <h2 id="contact-title">Have a question about a file or guide?</h2>
+      <p class="muted">We're here to help.</p>
+      <span class="todo">[ your email address ]</span>
+    </div>
+  </section>
+
+  <section class="section" id="blog" aria-labelledby="blog-title">
+    <div class="section-head">
+      <h2 id="blog-title">Blog</h2>
+      <p>Short guides on planting design, schedules and presentation.</p>
+    </div>
+    <div class="grid-3">
+      <article class="post"><div class="ph r-3x2" data-name="Blog post one" data-ratio="3 : 2"></div><div class="cap"><h3>How to Build a Plant Palette That Works in Drifts</h3><div class="meta"><span class="more">Read more</span><span class="label">Coming soon</span></div></div></article>
+      <article class="post"><div class="ph r-3x2" data-name="Blog post two" data-ratio="3 : 2"></div><div class="cap"><h3>Reading a Planting Schedule: What Each Column Is For</h3><div class="meta"><span class="more">Read more</span><span class="label">Coming soon</span></div></div></article>
+      <article class="post"><div class="ph r-3x2" data-name="Blog post three" data-ratio="3 : 2"></div><div class="cap"><h3>How to Set Up an InDesign Portfolio in an Afternoon</h3><div class="meta"><span class="more">Read more</span><span class="label">Coming soon</span></div></div></article>
+      <article class="post"><div class="ph r-3x2" data-name="Blog post four" data-ratio="3 : 2"></div><div class="cap"><h3>Calculating Tree Canopy Cover for a Site</h3><div class="meta"><span class="more">Read more</span><span class="label">Coming soon</span></div></div></article>
+      <article class="post"><div class="ph r-3x2" data-name="Blog post five" data-ratio="3 : 2"></div><div class="cap"><h3>Drawing Your Own Plan-view Plant Symbols in Illustrator</h3><div class="meta"><span class="more">Read more</span><span class="label">Coming soon</span></div></div></article>
+      <article class="post"><div class="ph r-3x2" data-name="Blog post six" data-ratio="3 : 2"></div><div class="cap"><h3>Choosing Plants by Sun, Shade and Drought Tolerance</h3><div class="meta"><span class="more">Read more</span><span class="label">Coming soon</span></div></div></article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <a class="logo" href="#home" aria-label="BAZ Landscape Architect, back to top"><img src="images/logo.png" width="900" height="306" alt="BAZ Landscape Architect"></a>
+  </div>
+  <ul>
+    <li class="label">Follow</li>
+    <li>Instagram</li>
+    <li>LinkedIn</li>
+    <li>Pinterest</li>
+  </ul>
+  <ul class="legal">
+    <li>&copy; 2026 BAZ Landscape Architect</li>
+    <li>FAQs</li>
+    <li>Terms and conditions</li>
+    <li>Privacy policy</li>
+  </ul>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+/* =====================================================================
+   YOUR SETTINGS
+   Pictures and Gumroad links live here, so you never have to search the page.
+   Rules: keep the quotation marks, and keep the comma at the end of every line
+   except the last line in each list.
+   ===================================================================== */
+
+/* 1. Draft mode. Leave it as true while you build.
+      Change it to false when the site goes live: that hides the draft note
+      and the "add image" prompts on empty boxes. */
+var DRAFT = true;
+
+/* 2. Your Gumroad links. In Gumroad, open the product and copy its link
+      (it looks like https://yourname.gumroad.com/l/something).
+      Paste it between the quotes next to the matching name.
+      A button with empty quotes tells visitors the file is not available yet. */
+var LINKS = {
+  "plant-database":       "",
+  "canopy-calculator":    "",
+  "plant-symbols":        "",
+  "portfolio-template":   "",
+  "free-palette-guide":   "",
+  "free-checklist":       "",
+  "free-portfolio-guide": "",
+  "free-quick-start":     ""
+};
+
+/* 3. Your pictures. Put each picture in the "images" folder, then type its
+      file name between the quotes, for example "images/hero.jpg".
+      Empty quotes keep the empty box. The note on the right is the box shape. */
+var IMAGES = {
+  "Hero": "",                              /* wide, 16 : 7 */
+  "Project one": "",                       /* portrait, 4 : 5 */
+  "Project two": "",                       /* portrait, 4 : 5 */
+  "Project three": "",                     /* portrait, 4 : 5 */
+  "Dashboard": "",                         /* landscape, 3 : 2 */
+  "Plant card": "",                        /* landscape, 3 : 2 */
+  "Guide cover": "",                       /* portrait, 4 : 5 */
+  "Plant database card": "",               /* square */
+  "Design files card": "",                 /* square */
+  "Checklist card": "",                    /* square */
+  "Detail portrait one": "",               /* portrait, 4 : 5 */
+  "Detail portrait two": "",               /* portrait, 4 : 5 */
+  "Detail square": "",                     /* square */
+  "Plant Database product": "",            /* square */
+  "Canopy Coverage Calculator product": "", /* square */
+  "Plant Symbols product": "",             /* square */
+  "Portfolio Template product": "",        /* square */
+  "Notion product": "",                    /* square */
+  "Plant palette starter": "",             /* square */
+  "Planting schedule checklist": "",       /* square */
+  "Portfolio layout guide": "",            /* square */
+  "Plant database quick start": "",        /* square */
+  "Guide preview": "",                     /* square */
+  "Blog post one": "",                     /* landscape, 3 : 2 */
+  "Blog post two": "",                     /* landscape, 3 : 2 */
+  "Blog post three": "",                   /* landscape, 3 : 2 */
+  "Blog post four": "",                    /* landscape, 3 : 2 */
+  "Blog post five": "",                    /* landscape, 3 : 2 */
+  "Blog post six": ""                     /* landscape, 3 : 2 */
+};
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Read the settings above. If a setting is missing or broken the page still works. */
+  var draft = (typeof DRAFT === 'undefined') ? true : DRAFT !== false;
+  var links = (typeof LINKS === 'object' && LINKS) ? LINKS : {};
+  var images = (typeof IMAGES === 'object' && IMAGES) ? IMAGES : {};
+
+  /* ---------- Empty image box: click or drop a picture to preview it (draft only, not saved) ---------- */
+  function armPicker(box, name) {
+    var ratio = box.getAttribute('data-ratio');
+    var label = document.createElement('span');
+    label.className = 'ph-label';
+    if (box.classList.contains('sm') || !ratio) {
+      label.textContent = '+';
+    } else {
+      label.appendChild(document.createTextNode('+ Add image'));
+      var small = document.createElement('small');
+      small.textContent = ratio;
+      label.appendChild(small);
+    }
+    box.appendChild(label);
+    box.setAttribute('role', 'button');
+    box.setAttribute('tabindex', '0');
+    box.setAttribute('aria-label', 'Add image: ' + name);
+
+    var input = document.createElement('input');
+    input.type = 'file'; input.accept = 'image/*'; input.hidden = true;
+    input.setAttribute('aria-hidden', 'true'); input.tabIndex = -1;
+    box.appendChild(input);
+
+    var url = null;
+    function show(file) {
+      if (!file || !/^image\//.test(file.type)) return;
+      if (url) URL.revokeObjectURL(url);
+      url = URL.createObjectURL(file);
+      var img = box.querySelector('img');
+      if (!img) { img = document.createElement('img'); img.alt = ''; box.appendChild(img); }
+      img.src = url;
+      box.classList.add('has-img');
+      box.setAttribute('aria-label', 'Replace image: ' + name);
+    }
+    box.addEventListener('click', function (e) { if (e.target !== input) input.click(); });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+    });
+    input.addEventListener('change', function () { show(input.files && input.files[0]); input.value = ''; });
+    ['dragenter', 'dragover'].forEach(function (t) {
+      box.addEventListener(t, function (e) { e.preventDefault(); box.classList.add('drag'); });
+    });
+    box.addEventListener('dragleave', function () { box.classList.remove('drag'); });
+    box.addEventListener('drop', function (e) {
+      e.preventDefault(); box.classList.remove('drag');
+      show(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]);
+    });
+  }
+
+  /* ---------- Every image box: use the picture named in IMAGES, otherwise stay empty ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.ph'), function (box) {
+    var name = box.getAttribute('data-name') || 'image';
+    var src = images[name];
+    if (typeof src === 'string' && src.trim()) {
+      var pic = document.createElement('img');
+      pic.alt = name;
+      pic.addEventListener('error', function () {
+        console.warn('Picture not found for "' + name + '": ' + src);
+        if (pic.parentNode) pic.parentNode.removeChild(pic);
+        box.classList.remove('has-img', 'filled');
+        if (draft) armPicker(box, name);
+      });
+      pic.src = src.trim();
+      box.appendChild(pic);
+      box.classList.add('has-img', 'filled');
+    } else if (draft) {
+      armPicker(box, name);
+    }
+  });
+
+  var hint = document.getElementById('hint');
+  if (!draft) hint.hidden = true;
+  document.getElementById('hint-close').addEventListener('click', function () { hint.hidden = true; });
+
+  /* ---------- Buy and download buttons: open the Gumroad link from LINKS ---------- */
+  var toast = document.getElementById('toast');
+  var timer = null;
+  function say(msg) {
+    toast.textContent = msg;
+    toast.hidden = false;
+    clearTimeout(timer);
+    timer = setTimeout(function () { toast.hidden = true; }, 4000);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('a[data-product]'), function (a) {
+    var key = a.getAttribute('data-product');
+    var url = links[key];
+    if (typeof url === 'string' && /^https:\/\//i.test(url.trim())) {
+      a.href = url.trim();
+      a.target = '_blank';
+      a.rel = 'noopener';
+    } else {
+      a.addEventListener('click', function (e) { e.preventDefault(); say('Not available yet.'); });
+    }
+  });
+})();
+</script>
+</body>
+</html>
